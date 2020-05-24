@@ -10,7 +10,7 @@ function print(text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid(name) {
-  return (name !== undefined && name.trim() !== '' && name.length >= 4);
+  return (name !== undefined && !(/\s/.test(name)) && name.length >= 4);
 }
 
 function sayHello() {
