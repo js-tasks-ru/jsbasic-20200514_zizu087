@@ -5,6 +5,7 @@
  * @returns {string}
  */
 function showSalary(data, age) {
-  let filteredArray = data.filter(item => item.age <= age);
-  return filteredArray.map(item => `${item.name} ${item.balance}`).join(`\n`);
+  const filteredArray = data.filter(item => item.age <= age);
+  const filteredArrayToString =  filteredArray.map(item => `${item.name} ${item.balance}`).join(`\n`);
+  return filteredArrayToString.slice(0, filteredArrayToString.length - 1);
 }
