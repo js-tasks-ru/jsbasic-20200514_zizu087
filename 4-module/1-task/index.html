@@ -13,12 +13,6 @@
          * @prop {string} lastName
          */
 
-       let makeFriendsList = (arr) => {
-         let ul = document.createElement(`ul`);
-         ul.innerHTML = arr.map(item => `<li>${item.firstName} ${item.lastName}</li>`).join(`\n`);
-         return ul;
-       }
-
         let friends = [
             {
                 firstName: 'Artsiom',
