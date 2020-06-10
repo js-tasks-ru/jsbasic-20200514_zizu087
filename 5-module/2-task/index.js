@@ -60,10 +60,14 @@ function SortableTable(items) {
                 <td>${item.city}</td>
             </tr>` );
 
-    let sortedOpposite = sorted.reverse();
     let sortedResult;
     let isOpposite = desc;
-    isOpposite === true ? sortedResult = sortedOpposite : sortedResult = sorted;
+    if (isOpposite) {
+      let sortedOpposite = sorted.reverse();
+      sortedResult = sortedOpposite;
+    } else {
+      sortedResult = sorted;
+       }
     tBody.insertAdjacentHTML(`beforeend`, sortedResult.join(`\n`));
   };
 }
