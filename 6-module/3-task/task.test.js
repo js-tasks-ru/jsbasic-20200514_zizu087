@@ -1,3 +1,5 @@
+import {Menu} from `index.js`;
+
 describe('6-module-3-task', () => {
   let menu;
   let backdrop;

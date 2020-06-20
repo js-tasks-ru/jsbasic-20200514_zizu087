@@ -1,6 +1,6 @@
 'use strict';
 
-class Menu {
+export class Menu {
 
   template = `
   <ul class="list-group sidebar">
@@ -31,12 +31,15 @@ class Menu {
     element.innerHTML = this.template;
     let listItems = element.querySelectorAll(`.list-group-item`);
     for (let listItem of listItems) {
+
       listItem.classList.add(`backdrop`);
       let dropdownUl = listItem.querySelector(`.dropdown-menu`);
+
       listItem.addEventListener(`pointerenter`, () => {
         listItem.classList.add(`show`);
         dropdownUl.classList.add(`show`);
       });
+
       listItem.addEventListener(`pointerleave`, () => {
         listItem.classList.remove(`show`);
         dropdownUl.classList.remove(`show`);
@@ -44,6 +47,3 @@ class Menu {
     }
   }
 }
-
-// Делает класс доступным глобально, сделано для упрощения, чтобы можно было его вызывать из другого скрипта
-window.Menu = Menu;
